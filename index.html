@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background: linear-gradient(135deg, #43cea2, #185a9d);
       margin: 0;
       display: flex;
       justify-content: center;
@@ -18,31 +18,73 @@
     #todo-container {
       max-width: 400px;
       width: 100%;
-      background-color: #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
       padding: 20px;
       box-sizing: border-box;
+      backdrop-filter: blur(10px);
     }
 
     #task-input {
-      width: calc(100% - 20px);
+      width: calc(100% - 70px); /* Adjusted width to make room for the add button */
       padding: 10px;
       margin-bottom: 10px;
-      box-sizing: border-box;
+      border: none;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+      color: #fff;
+      font-size: 16px;
+      display: inline-block; /* Aligns input and button */
+    }
+
+    #task-input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    #todo-container button { /* Style for the add button */
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      background: transparent;
+      color: #fff;
+      transition: 0.3s;
+      display: inline-block; /* Aligns input and button */
+      vertical-align: top; /* Aligns button with top of input */
+      margin-left: 5px; /* Adds space between input and button */
+    }
+
+    #todo-container button:hover {
+      border-color: rgba(255, 255, 255, 0.4);
     }
 
     .task-item {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
       padding: 10px 0;
+      color: #fff;
     }
 
     .task-buttons {
       display: flex;
       gap: 10px;
+    }
+
+    .task-buttons button {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 5px 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      background: transparent;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .task-buttons button:hover {
+      border-color: rgba(255, 255, 255, 0.4);
     }
   </style>
 </head>
@@ -136,4 +178,3 @@
 
 </body>
 </html>
-
